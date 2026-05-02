@@ -19,9 +19,7 @@ public class Lion {
     }
 
 
-    public Lion(String sex) throws Exception {
-        this(sex, new Feline());
-    }
+    // удалил тут
 
     public int getKittens() {
         return feline.getKittens();

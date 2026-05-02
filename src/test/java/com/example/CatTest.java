@@ -21,7 +21,8 @@ public class CatTest {
     }
     @Test
     public void getFoodReturnsWhatEatMeatReturns() throws Exception {
-        List<String> expected = List.of("Рыба", "Мышь");
+        List<String> expected = List.of("Животные", "Птицы", "Рыбы"); // понял
+
         when(feline.eatMeat()).thenReturn(expected);
         assertEquals(expected, cat.getFood());
     }

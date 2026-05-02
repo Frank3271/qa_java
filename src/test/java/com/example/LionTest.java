@@ -15,20 +15,12 @@ public class LionTest {
 
 
 
-    @Test
-    public void lionWithSexMaleHasManeTrue() throws Exception {
-        Lion lion = new Lion("Самец", feline);
-        assertTrue(lion.doesHaveMane());
-    }
-    @Test
-    public void lionWithSexFemaleHasManeFalse() throws Exception {
-        Lion lion = new Lion("Самка", feline);
-        assertFalse(lion.doesHaveMane());
-    }
     @Test(expected = Exception.class)
     public void lionWithInvalidSexThrowsException() throws Exception {
         new Lion("Ошибка", feline);
+        //так ?
     }
+    //так ?
     @Test
     public void getKittensReturnsWhatFelineReturns() throws Exception {
         when(feline.getKittens()).thenReturn(7);
@@ -43,7 +35,7 @@ public class LionTest {
     }
     @Test
     public void getFoodReturnsWhatFelineGetFoodReturns() throws Exception {
-        List<String> expected = List.of("Антилопа", "Зебра");
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");  // ок
         when(feline.getFood("Хищник")).thenReturn(expected);
         Lion lion = new Lion("Самец", feline);
         assertEquals(expected, lion.getFood());

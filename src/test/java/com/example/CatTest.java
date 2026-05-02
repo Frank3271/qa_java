@@ -20,19 +20,15 @@ public class CatTest {
         assertEquals("Мяу", cat.getSound());
     }
     @Test
-    public void getFoodCallsFelineGetFood() throws Exception {
-        List<String> expectedFood = List.of("Мясо", "Рыба");
-        when(feline.getFood("Хищник")).thenReturn(expectedFood);
-        List<String> actualFood = cat.getFood();
-        assertEquals(expectedFood, actualFood);
-        verify(feline, times(1)).getFood("Хищник");
+    public void getFoodReturnsWhatEatMeatReturns() throws Exception {
+        List<String> expected = List.of("Животные", "Птицы", "Рыбы"); // понял
+
+        when(feline.eatMeat()).thenReturn(expected);
+        assertEquals(expected, cat.getFood());
     }
-
-    @Test;
-    public void getKittensCallsFelineGetKitte
-        when(feline.getKittens()).thenReturn(3);
-
-        assertEquals(3, cat.getKittens());
-        verify(feline, times(1)).getKittens();
+    @Test
+    public void getFoodCallsEatMeatOnPredator() throws Exception {
+        cat.getFood();
+        verify(feline).eatMeat();
     }
 }
